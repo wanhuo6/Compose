@@ -17,7 +17,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import com.example.compose.R
-import com.example.compose.entity.Message
+import com.example.compose.entity.MessageEntity
 import androidx.compose.foundation.lazy.items
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -29,7 +29,7 @@ import androidx.compose.runtime.remember
  * Description 列表
  */
 @Composable
-fun MessageCard(msg: Message) {
+fun MessageCard(msg: MessageEntity) {
     Row(modifier = Modifier.padding(all = 8.dp)) {
         Image(
             painter = painterResource(R.drawable.ic_dog),
@@ -63,7 +63,7 @@ fun MessageCard(msg: Message) {
 
 
 @Composable
-fun MessageCard2(msg: Message) {
+fun MessageCard2(msg: MessageEntity) {
     Row(modifier = Modifier.padding(all = 8.dp)) {
         Image(
             painter = painterResource(R.drawable.ic_dog),
@@ -116,7 +116,7 @@ fun MessageCard2(msg: Message) {
 
 
 @Composable
-fun Conversation(messages:List<Message>){
+fun Conversation(messages:List<MessageEntity>){
     LazyColumn{
         items(messages){
             message->

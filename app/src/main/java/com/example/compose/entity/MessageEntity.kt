@@ -6,7 +6,7 @@ package com.example.compose.entity
  * Date 2023/8/17 17:35
  * Description TODO
  */
-class Message {
+class MessageEntity {
     var name:String=""
     var message:String=""
 }

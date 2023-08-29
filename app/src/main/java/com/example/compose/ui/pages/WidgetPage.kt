@@ -1,56 +1,31 @@
-package com.example.compose
-import android.os.Bundle
+package com.example.compose.ui.pages
+
 import android.widget.Toast
-import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.*
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
+import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
-import com.example.compose.entity.Message
-import com.example.compose.ui.theme.ComposeTheme
-import com.example.compose.ui.view.Conversation
+import com.example.compose.R
 
-class MainActivity : ComponentActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-       // WindowCompat.setDecorFitsSystemWindows(window,false)
-        setContent {
-            ComposeTheme {
-                Surface(modifier = Modifier.fillMaxSize(), color = Color.White) {
-                  //  Test(name = "李梅", age = "12")
-                    var messages= mutableListOf<Message>()
-                    for (i in 1..100){
-                        var message=Message()
-                        message.name="limei $i"
-                        message.message="水电费速度啊索尼大法以所发生的速度第三方速度低俗低俗水电费速水电费水电费 低俗水电费 \n sdf 低俗度是发多少低俗速度低俗低俗非氨基酸的你是你说的呢为额外二 sdf sfsf sajf lajf lajalfja lsajflsajflkas jfdsajf af jsad fsad jfdsa aj s fsa fsaf slkjf lkjlo $i"
-                        messages.add(message)
-                    }
-                    Conversation(messages)
-                }
-            }
-        }
-
-    }
-}
-
-
+/**
+ * ClassName WidgetPage
+ * Author LiuHuiJie
+ * Date 2023/8/29 14:40
+ * Description 控件
+ */
 @Composable
-fun Test(name: String, age: String) {
+fun WidgetPage() {
     val context = LocalContext.current
     val text = remember {
         mutableStateOf("")
@@ -62,8 +37,6 @@ fun Test(name: String, age: String) {
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.SpaceEvenly
     ) {
-        Greeting(name = "111")
-        Greeting(name = "222")
         Row(
             modifier = Modifier
                 .padding(start = 10.dp, end = 10.dp, top = 10.dp)
@@ -72,7 +45,7 @@ fun Test(name: String, age: String) {
                 .padding(top = 10.dp, bottom = 10.dp)
         ) {
             Text(
-                text = "name: $name age:$age",
+                text = "name: ",
                 color = Color.Red,
                 fontSize = 20.sp,
                 modifier = Modifier.padding(10.dp)
@@ -123,15 +96,3 @@ fun Test(name: String, age: String) {
     }
 }
 
-@Composable
-fun Greeting(name: String) {
-    Text(text = "Hello $name!")
-}
-
-@Preview(showBackground = true)
-@Composable
-fun DefaultPreview() {
-    ComposeTheme {
-        // Test(name = "李梅", age = "12")
-    }
-}
